@@ -3,20 +3,15 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --primary: #212529;
-    --gray100: #333;
-    --gray200: #CED4DA;
-    --gray300: #EDEDED;
+    --gray100: #343A40;
+    --gray200: #DEE2E6;
+    --gray300: #F8F9FA;
     --white: #FFF;
     --black: #000;
     --green: #02C39A;
-    --blue: #003554;
-    --purple: #5E548E;
-    --red: #DA2C38;
-    /* --txt-sm: 16px;
-    --txt-md: 20px;
-    --txt-lg: 24px;
-    --txt-subtitle: 36px;
-    --txt-title: 64px; */
+    --blue: #007FAA;
+    --red: #C1121F;
+    --yellow: #F5CB5C;
   }
 
   *,
@@ -66,33 +61,40 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin-block-start: 0;
     margin-block-end: 0;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
   }
 
   h2 {
-    font-size: 36px;
+    position: relative;
+    font-size: 32px;
+    font-family: 'Inter', serif;
   }
 
   h3 {
-    font-size: 24px;
-  }
-
-  h4 {
     font-size: 20px;
   }
 
-  strong {
-    font-size: 18px;
-  }
-  p {
+  h4 {
     font-size: 16px;
   }
 
+  strong {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 14px;
+  }
 
   ul,
   ol,
   li {
     list-style: none;
+  }
+
+  em,
+  strong {
+    font-weight: 700;
   }
 
   .visually-hidden {
@@ -110,7 +112,8 @@ const GlobalStyle = createGlobalStyle`
 
   .inner {
     position: relative;
-    max-width: 1280px;
+    max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -125,6 +128,10 @@ const GlobalStyle = createGlobalStyle`
     &.justify-center {
       justify-content: center;
     }
+  }
+
+  .point {
+    color: var(--blue);
   }
 `;
 

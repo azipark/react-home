@@ -3,15 +3,14 @@ import styled from 'styled-components';
 
 const HeaderWrap = styled.header`
   z-index: 7721;
-  display: ${(props) => (props.isVisible ? 'block' : 'none')};
   position: fixed;
   width: 100%;
   height: 60px;
   top: 0;
   padding: 0 20px;
-  transition: all 0.5s ease-in;
+  box-shadow: ${(props) => (props.isScrolled ? '0 2px 5px rgba(0, 0, 0, 0.1)' : 'none')};
   color: var(--white);
-  background: var(--primary);
+  background: ${(props) => (props.isScrolled ? '#212529' : 'transparent')};
 `;
 
 const Navbar = styled.nav`
@@ -24,51 +23,64 @@ const Navbar = styled.nav`
   margin: 0 auto;
 `;
 
-const NavLink = styled.button`
+const NavLink = styled.a`
   display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 400;
   color: var(--white);
-  transition: color 0.3s ease;
 
-  + button {
-    margin-left: 10px;
+  + a {
+    margin-left: 24px;
   }
 
   &:hover {
     cursor: pointer;
-    text-decoration: underline;
+
+    .underline {
+      left: 0;
+    }
+  }
+
+  .underline {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: -90px;
+    margin-top: 15px;
+    transition: all .3s ease-in;
+    background-color: var(--red);
   }
 `;
 
-function Header({ scrollToSection }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+function Header() {
+
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 0) {
-        setIsVisible(true);
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
       } else {
-        setIsVisible(false);
+        setIsScrolled(false);
       }
-
-      setLastScrollY(currentScrollY);
-    };
-
+    }
+  
     window.addEventListener('scroll', handleScroll);
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <HeaderWrap isVisible={isVisible}>
+    <HeaderWrap isScrolled={isScrolled}>
       <Navbar>
-        <NavLink onClick={() => scrollToSection('Home')}>HOME</NavLink>
-        <NavLink onClick={() => scrollToSection('timeline')}>TIMELINE</NavLink>
-        <NavLink onClick={() => scrollToSection('projects')}>PROJECTS</NavLink>
+        <NavLink href="/"><span className="underline"></span>H O M E</NavLink>
+        <NavLink href="/about"><span className="underline"></span>A B O U T</NavLink>
+        <NavLink href="/projects"><span className="underline"></span>P R O J E C T S</NavLink>
       </Navbar>
     </HeaderWrap>
   );

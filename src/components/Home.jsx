@@ -17,7 +17,7 @@ const HomeWrap = styled.section`
   .main-text {
     overflow: clip;
     position: relative;
-    font-size: 15vw;
+    font-size: 10vw;
     font-weight: 900;
     color: var(--white);
     background-clip: text;
@@ -38,7 +38,6 @@ const HomeWrap = styled.section`
       border-bottom-right-radius: 50% 80%;
       animation: rot 10s linear infinite;
       mix-blend-mode: screen;
-      
       background-color: var(--green);
     }
 
@@ -55,6 +54,25 @@ const HomeWrap = styled.section`
   }
 `;
 
+const FooterWrap = styled.footer `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8vh;
+  color: var(--white);
+  /* background: transparent; */
+
+  h2 {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+`;
+
 function Home() {
   return (
     <>
@@ -62,6 +80,9 @@ function Home() {
         <div className="d-flex align-center justify-center">
           <h1 className="main-text">hello</h1>
         </div>
+        <FooterWrap>
+          <h2>copyright hyeyeon</h2>
+        </FooterWrap>
       </HomeWrap>
     </>
   );
