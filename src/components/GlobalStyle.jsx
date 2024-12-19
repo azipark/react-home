@@ -67,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     position: relative;
     font-size: 32px;
-    font-family: 'Inter', serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   h3 {

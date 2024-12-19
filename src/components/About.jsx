@@ -37,11 +37,17 @@ const Banner = styled.div`
 const BannerText = styled.div`
   position: fixed;
   width: auto;
-  top: 20%;
+  top: 25%;
   left: 50%;
   padding: 20px;
-  border: .5em solid var(--white);
+  border: 6px solid var(--white);
   transform: translateX(-50%);
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
 `;
 
 const Content = styled.div`
@@ -199,32 +205,6 @@ function About() {
           <h2>A b o u t</h2>
         </BannerText>
       </Banner>
-      <Content id="content">
-        <div className="inner">
-          <h2><span className="point">Skill set</span></h2>
-          <ul>
-            <li><img src="src/assets/img_html.png" alt="HTML5" /></li>
-            <li><img src="src/assets/img_css.png" alt="CSS3" /></li>
-            <li><img src="src/assets/img_sass.png" alt="SASS" /></li>
-            <li><img src="src/assets/img_js.png" alt="Javascript" /></li>
-            <li><img src="src/assets/img_vue.png" alt="VueJS" /></li>
-            <li><img src="src/assets/img_react.png" alt="React" /></li>
-            <li><img src="src/assets/img_gsap.png" alt="GSAP" /></li>
-            <li><img src="src/assets/img_bootstrap.png" alt="Bootstrap" /></li>
-          </ul>
-
-          <h2><span className="point">Tools</span> I use</h2>
-          <ul>
-            <li><img src="src/assets/img_macos.png" alt="macOS" /></li>
-            <li><img src="src/assets/img_vscode.png" alt="VSCODE" /></li>
-            <li><img src="src/assets/img_ps.png" alt="Adobe Photoshop" /></li>
-            <li><img src="src/assets/img_xd.png" alt="Adobe XD" /></li>
-            <li><img src="src/assets/img_figma.png" alt="Figma" /></li>
-            <li><img src="src/assets/img_sketch.png" alt="Sketch" /></li>
-            <li><img src="src/assets/img_zeplin.png" alt="Zeplin" /></li>
-          </ul>
-        </div>
-      </Content>
     </AboutWrap>
     <TimeWrap>
       <div className="inner">
@@ -315,6 +295,32 @@ function About() {
         </ul>
       </div>
     </TimeWrap>
+    <Content id="content">
+        <div className="inner">
+          <h2><span className="point">Skill set</span></h2>
+          <ul>
+            <li><img src="src/assets/img_html.png" alt="HTML5" /></li>
+            <li><img src="src/assets/img_css.png" alt="CSS3" /></li>
+            <li><img src="src/assets/img_sass.png" alt="SASS" /></li>
+            <li><img src="src/assets/img_js.png" alt="Javascript" /></li>
+            <li><img src="src/assets/img_vue.png" alt="VueJS" /></li>
+            <li><img src="src/assets/img_react.png" alt="React" /></li>
+            <li><img src="src/assets/img_gsap.png" alt="GSAP" /></li>
+            <li><img src="src/assets/img_bootstrap.png" alt="Bootstrap" /></li>
+          </ul>
+
+          <h2><span className="point">Tools</span> I use</h2>
+          <ul>
+            <li><img src="src/assets/img_macos.png" alt="macOS" /></li>
+            <li><img src="src/assets/img_vscode.png" alt="VSCODE" /></li>
+            <li><img src="src/assets/img_ps.png" alt="Adobe Photoshop" /></li>
+            <li><img src="src/assets/img_xd.png" alt="Adobe XD" /></li>
+            <li><img src="src/assets/img_figma.png" alt="Figma" /></li>
+            <li><img src="src/assets/img_sketch.png" alt="Sketch" /></li>
+            <li><img src="src/assets/img_zeplin.png" alt="Zeplin" /></li>
+          </ul>
+        </div>
+      </Content>
   </>
   );
 }
